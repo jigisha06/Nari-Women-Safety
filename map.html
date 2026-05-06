@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Google Map</title>
+    <style>
+      #map {
+        height: 500px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>My Google Map</h3>
+    <div id="map"></div>
+
+    <!-- JavaScript to initialize map -->
+    <script>
+      function initMap() {
+        const myLocation = { lat: 28.6139, lng: 77.2090 }; // New Delhi coords
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 10,
+          center: myLocation,
+        });
+        const marker = new google.maps.Marker({
+          position: myLocation,
+          map: map,
+        });
+      }
+    </script>
+
+    <!-- Load Google Maps API properly -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrbxGbmOta7prO4ITgmwwJEWZEoO8ICVs&callback=initMap"
+      async defer>
+    </script>
+  </body>
+</html>
+
